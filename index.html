@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+     <title>WebGL waifu2x</title>
+	<script src="vgl.js"></script>
+	<script src="client.js"></script>
+</head>
+<body>
+	<h2>waifu2x (WebGL ver.)</h2>
+	<form autocomplete="off">
+	<div style="font-style: italic;">Limitation: Maximum image size is 256x256.</div>
+	<br>
+	<div id="msg" style="color:#000000;"></div>
+	<input type="file" id="imgselect">
+	<p>
+		<input type="radio" name="iscale" value="1.0" checked="checked" id="iscale10">x1.0
+		<input type="radio" name="iscale" value="1.6" id="iscale16">x1.6		
+		<input type="radio" name="iscale" value="2.0" id="iscale20">x2.0
+	</p>
+	<div>Noise reduction</div>	
+	<input type="radio" name="noise" id="noise1" value="noise1" checked>Low
+	<input type="radio" name="noise" id="noise2" value="noise2">High
+		<br>
+	
+	<br>
+	<button type="button" id="execute" style="width:80pt;height:20pt" disabled>Execute</button>
+	<input type="checkbox" name="edgeclamp" id="edgeclamp">Edge clamp(for faster GPU)
+ 
+	<br><br>
+	<table border="0" width="512" cellspacing="0" cellpadding="5" bordercolor="#333333" >
+	<tr>
+		<th style="padding:0 0 0 0">
+			Original
+		</th>
+		<th style="padding:0 0 0 0">
+			Result
+		</th>
+	</tr>
+	<tr>
+		<th style="padding:0 0 0 0">
+			<canvas id="ic" width="256" height="256" style="width:256px;height:256px;"></canvas>
+		</th>
+		<th style="padding:0 0 0 0">
+			<canvas id="c"  width="256" height="256" style="width:256px;height:256px;"></canvas>
+		</th>
+	</tr>
+	</table>
+	<div style="color:#000000;">Tested on Chrome, FireFox, Safari on MacOSX, Chrome on Windows 8.1 with faster GPU</div>
+	
+	<div style="color:#000000;">ported by <a href="https://twitter.com/kioku_systemk">@kioku_systemk</a> / <a href="https://github.com/kioku-systemk/waifu2x_webgl">sourcecode</a></div>
+	<div>Original is <a href="https://github.com/nagadomi/waifu2x">waifu2x</a></div>
+	<br>
+	<ul>
+		<li>2015.07.10 - initial release</li>
+		<li>2015.07.12 - support some options</li>
+	</ul>
+</body>	
+</html>
